@@ -140,7 +140,7 @@ a{
   content: "";
   width: 100vw;
   height: 100vh;
-  background-image: url('style/img/2.jpg');
+  background-image: url('2.jpg');
   background-size: cover;
   position: absolute;
   top: 0;
