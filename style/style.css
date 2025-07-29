@@ -29,12 +29,15 @@ h2 {
 p,
 li {
   font-size: var(--txtSize);
-  text-align: center;
+  text-align: justify;
   font-family: Roboto;
 }
 a {
   font-size: var(--A_size);
   font-family: Roboto;
+}
+.p_center{
+  text-align: center;
 }
 .theme {
   border: 1px solid black;
@@ -335,7 +338,7 @@ a{
   grid-area: "txt_21";
 }
 .about_main_txt{
-  margin: 0 15%;
+  margin: 5% 20%;
 }
 @media(max-width:1450px){
   :root{
@@ -404,7 +407,7 @@ a{
   :root {
     --txtSize: 28px;
     --h1Size: 52px;
-    --h2Size: 32px;
+    --h2Size: 28px;
     --A_size: 16px;
   }
   #main_img_container::before{
@@ -420,6 +423,9 @@ a{
     height: 32vh;
     border-radius: 30px;
 
+  }
+  .article_content{
+    border-radius: 60px;
   }
   
 
@@ -479,6 +485,17 @@ a{
   height: 40%;
 }
 }
+@media(max-width:600px){
+  :root{
+    --h1Size: 26px;
+    --h2Size: 22px;
+    --txtSize:20px;
+  }
+  .article_content{
+  bottom: 5%;
+  border-radius: 40px;
+}
+}
 @media(max-width:450px){
   :root {
     --txtSize: 16px;
@@ -487,13 +504,15 @@ a{
     --A_size: 15px;
   }
   #main_img_container{
-    height: 50vh;
+    height: 55vh;
+    margin-top: 15%;
   }
   #menu{
     padding: 0;
   }
   #main_img_container::before{
     height: 60vh;
+    margin-top: 18%;
   }
   .news_card>img{
     width: 80vi;
@@ -572,7 +591,7 @@ causes many problems
 }
   */
 }
-@media(max-width:321px){
+@media(max-width:351px){
   .news_card>img{
     width: 90vi;
     height: 80vh;
@@ -618,4 +637,5 @@ causes many problems
 #article_window_2{
   height: 30%;
 }
+
 }
