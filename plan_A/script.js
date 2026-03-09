@@ -119,3 +119,52 @@ propA.forEach((item)=>{
 
 
 })
+
+
+
+//burger-menu script
+const burger = document.getElementById('burger');
+const nav = document.getElementById('nav');
+
+// Функция для закрытия меню при изменении размера экрана
+function closeMenuOnResize() {
+    if (window.innerWidth > 450) {
+        nav.classList.remove('open');
+        burger.classList.remove('open');
+        // Также убираем атрибут aria-expanded
+        burger.setAttribute('aria-expanded', 'false');
+    }
+}
+
+// Обработчик клика по бургеру
+burger.addEventListener('click', () => {
+    const isOpen = nav.classList.contains('open');
+    if (isOpen) {
+        nav.classList.remove('open');
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+    } else {
+        nav.classList.add('open');
+        burger.classList.add('open');
+        burger.setAttribute('aria-expanded', 'true');
+    }
+});
+
+// Закрываем меню при клике на ссылку (опционально)
+nav.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+        nav.classList.remove('open');
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+    }
+});
+
+// Слушаем изменение размера окна
+window.addEventListener('resize', closeMenuOnResize);
+
+// Инициализация: если при загрузке страницы ширина меньше 450, бургер виден, меню закрыто
+closeMenuOnResize();
+
+// Для доступности: добавляем aria-атрибуты
+burger.setAttribute('aria-expanded', 'false');
+nav.setAttribute('aria-label', 'Главное меню');
